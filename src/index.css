@@ -1,0 +1,29 @@
+/* should I put all styles here or break them up by component?  */
+
+h1 { 
+    margin-left: 40px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+button {
+    margin-right: 10px;
+}
+
+.collection-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    margin-left: 40px;
+}
+
+.collection {
+    width: 240px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 40px;
+}
