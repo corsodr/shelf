@@ -1,8 +1,34 @@
-- git / github 
-- edit collection - think through how it should work
+Goal
+Make, share, and find collections. 
 
-- change link order
-- improve styling 
-- make keys unique?
+Today
+-push code to github 
+-bookmark 
+    -look at notes 
+    -decide how to implement 
 
-- make it great
+-delete collection
+-edit collection 
+
+Thursday
+-overflow
+-form layout 
+-saving empty collections
+-adding collections to sidebar on create click 
+-delete link  
+-change link order 
+
+Friday 
+-mobile design 
+-mobile 
+-deploy 
+
+Future 
+-add state styles
+-review ccs units
+-use component style sheets? 
+-combine collection edit and read?
+-code review 
+-get user feedback 
+-get code feedback 
+

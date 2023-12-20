@@ -1,29 +1,107 @@
-/* should I put all styles here or break them up by component?  */
-
-h1 { 
-    margin-left: 40px;
+body { 
+    margin: 0;
+    font-family: Roboto, sans-serif;
 }
 
-h3 {
-    margin-top: 0;
+.wrapper {
+    max-width: 1000px;
+    margin: auto;
 }
 
-button {
-    margin-right: 10px;
+.topbar {
+    margin: 20px 0;
+    background-color: white;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 8px 32px; 
+} 
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+
+.sidebar {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    height: calc(100vh - 120px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar button {
+    background-color: #E5E5E5;
+    padding: 10px 20px;
+    font-size: 1rem; 
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    cursor: pointer; 
+    margin: 20px 16px 14px 16px;
+}
+
+.collection-card {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 6px 16px;
+    cursor: pointer;
+}
+
+.main-content {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    height: calc(100vh - 120px);
+    margin-bottom: 20px;
+}
+
+.main-empty {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .collection-form {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 10px;
-    margin-left: 40px;
+    display: flex; 
+    flex-direction: column; 
+    max-width: 500px; 
+    padding: 20px;
+  }
+  
+.collection-form input,
+.collection-form button {
+  padding: 10px 20px; 
+  margin-bottom: 10px; 
+  border: 1px solid #E5E5E5; 
+  border-radius: 5px;
+  font-size: 1rem; 
 }
 
-.collection {
-    width: 240px;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 20px;
-    margin: 40px;
+.collection-form button {
+    cursor: pointer;
+}
+
+.save-delete-buttons {
+    display: flex;
+    gap: 10px; 
+}
+.save-delete-buttons button {
+    width: 50%;
+}
+
+.collection-view {
+    margin: 24px;
+}
+
+.collection-view h1 {
+    margin: 0;
+}
+
+/* why did I have to do this: */
+.collection-view-link {
+    margin: 16px 0px;
 }

@@ -1,24 +1,32 @@
 import { useState } from "react"
 
-const CollectionForm = ({collections, setCollections}) => {
+const CollectionForm = ({setCollections, setActiveCollection, setIsFormOpen}) => {
     const [name, setName] = useState('')
     const [links, setLinks] = useState([''])
 
     const saveCollection = (e) => {
-        e.preventDefault()
-        setCollections([...collections, {name, links}]);
-        setName('')
-        setLinks([''])
-    }
+        e.preventDefault();
+
+        // where do name and links come from 
+        const newCollection = { name, links };
+        // why pass a function 
+        setCollections(collections => [...collections, newCollection]);
+
+        setActiveCollection(newCollection)
+        setIsFormOpen(false)
+    
+        setName('');
+        setLinks(['']);
+    };
 
     const addLink = () => {
         setLinks([...links, ''])
     }
 
-    const deleteLink = (index) => {
-        const newLinks = links.filter((_, idx) => idx !== index)
-        setLinks(newLinks)
-    }
+    // const deleteLink = (index) => {
+    //     const newLinks = links.filter((_, idx) => idx !== index)
+    //     setLinks(newLinks)
+    // }
 
     const linkChange = (index, value) => {
         const newLinks = [...links]
@@ -28,7 +36,6 @@ const CollectionForm = ({collections, setCollections}) => {
 
     return (
         <>
-            <h1>Create a collection</h1>
             <form onSubmit={saveCollection} className="collection-form">
                 <input 
                     type="text" 
@@ -37,18 +44,20 @@ const CollectionForm = ({collections, setCollections}) => {
                     onChange={(e) => setName(e.target.value)}
                 />
             {links.map((link, index) => (
-                <div key={index}>
-                    <input 
-                        type="text"
-                        placeholder="Link"
-                        value={link}
-                        onChange={(e) => linkChange(index, e.target.value)}
-                    />
-                    <button type="button" onClick={() => deleteLink(index)}>X</button>
-                </div>
+                <input 
+                    key={index}
+                    type="text"
+                    placeholder="Item"
+                    value={link}
+                    onChange={(e) => linkChange(index, e.target.value)}
+                />
+                // <button type="button" onClick={() => deleteLink(index)}>X</button>
             ))}
-            <button type="button" onClick={addLink}>Add link</button>
-            <button>Save</button>
+            <button type="button" onClick={addLink}>Add item</button>
+            <div className="save-delete-buttons">
+                 <button type="submit">Save</button>
+                 <button>Delete</button>
+            </div>
     </form>
 
         </>
