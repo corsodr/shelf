@@ -17,20 +17,23 @@ const App = () => {
                 <main className="main-container">
                     <SideBar 
                         isFormOpen={isFormOpen} 
+                        setIsFormOpen={setIsFormOpen}
                         collections={collections} 
                         setActiveCollection={setActiveCollection}
-                        setIsFormOpen={setIsFormOpen}
                     />
-                    {/* review this: */}
                     <MainContent >
                         {isFormOpen ? (
                             <CollectionForm 
+                                setIsFormOpen={setIsFormOpen}
                                 setCollections={setCollections}
                                 setActiveCollection={setActiveCollection}
-                                setIsFormOpen={setIsFormOpen}
                             />
                         ) : activeCollection ? (
-                            <CollectionView collection={activeCollection} />
+                            <CollectionView 
+                                // rename collection activeCollection? 
+                                collection={activeCollection} 
+                                setCollections={setCollections}
+                            />
                         ) : (
                             <p className="main-empty">No collections</p>
                         )}

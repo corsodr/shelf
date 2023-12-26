@@ -1,17 +1,20 @@
 import { useState } from "react"
 
-const CollectionForm = ({setCollections, setActiveCollection, setIsFormOpen}) => {
+const CollectionForm = ({setIsFormOpen, setCollections, setActiveCollection}) => {
     const [name, setName] = useState('')
     const [links, setLinks] = useState([''])
 
+    // does it need the e? 
     const saveCollection = (e) => {
         e.preventDefault();
 
-        // where do name and links come from 
-        const newCollection = { name, links };
-        // why pass a function 
+        const newCollection = { 
+            name, 
+            links
+        };
+        
         setCollections(collections => [...collections, newCollection]);
-
+      
         setActiveCollection(newCollection)
         setIsFormOpen(false)
     
@@ -22,11 +25,6 @@ const CollectionForm = ({setCollections, setActiveCollection, setIsFormOpen}) =>
     const addLink = () => {
         setLinks([...links, ''])
     }
-
-    // const deleteLink = (index) => {
-    //     const newLinks = links.filter((_, idx) => idx !== index)
-    //     setLinks(newLinks)
-    // }
 
     const linkChange = (index, value) => {
         const newLinks = [...links]
@@ -51,7 +49,6 @@ const CollectionForm = ({setCollections, setActiveCollection, setIsFormOpen}) =>
                     value={link}
                     onChange={(e) => linkChange(index, e.target.value)}
                 />
-                // <button type="button" onClick={() => deleteLink(index)}>X</button>
             ))}
             <button type="button" onClick={addLink}>Add item</button>
             <div className="save-delete-buttons">
