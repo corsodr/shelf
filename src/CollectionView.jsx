@@ -1,4 +1,9 @@
-const CollectionView = ({activeCollection}) => {
+const CollectionView = ({activeCollection, setCollections, setIsFormOpen, setActiveCollection}) => {
+ 
+  const handleEdit = () => {
+    setIsFormOpen(true);
+    setActiveCollection(activeCollection);
+  };
 
   return (
       <div className="collection-view">
@@ -20,6 +25,7 @@ const CollectionView = ({activeCollection}) => {
           )}
         </a>
       ))}
+      <button onClick={handleEdit}>Edit</button>
     </div>
   );
 }

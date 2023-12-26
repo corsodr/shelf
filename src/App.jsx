@@ -26,12 +26,15 @@ const App = () => {
                                 setIsFormOpen={setIsFormOpen}
                                 collections={collections}
                                 setCollections={setCollections}
+                                activeCollection={activeCollection}
                                 setActiveCollection={setActiveCollection}
                             />
                         ) : activeCollection ? (
                             <CollectionView 
                                 activeCollection={activeCollection} 
                                 setCollections={setCollections}
+                                setIsFormOpen={setIsFormOpen}
+                                setActiveCollection={setActiveCollection}
                             />
                         ) : (
                             <p className="main-empty">No collections</p>
