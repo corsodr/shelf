@@ -37,7 +37,7 @@ const App = () => {
                                 setActiveCollection={setActiveCollection}
                             />
                         ) : (
-                            <p className="main-empty">No collections</p>
+                            <p className="notification">No collections</p>
                         )}
                     </MainContent>
                 </main>

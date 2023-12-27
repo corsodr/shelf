@@ -1,15 +1,10 @@
 Steady progress.
 
-Now 
--throttle API requests 
-    -try loading one at a time
-    -add loading
-
 Queue 
 -refactor CollectionView
 -refactor CollectionForm 
 -review code + data flow 
--implement delete link
+-add delete link 
 -change link order?
 -review layout 
 -saving empty collections
@@ -26,6 +21,7 @@ Queue
 -review strict mode 
 -turn off TS linter
 -hide API key 
+-try loading link previews as soon as they're ready 
 -improve throttling 
 -ask GPT for code feedback 
 -ask people for code feedback 

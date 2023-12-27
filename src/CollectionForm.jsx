@@ -5,6 +5,7 @@ import { useState } from "react"
 const CollectionForm = ({setIsFormOpen, collections, setCollections, activeCollection, setActiveCollection}) => {
     const [name, setName] = useState(activeCollection ? activeCollection.name : '');
     const [links, setLinks] = useState(activeCollection ? activeCollection.links : ['']);
+    const [isLoading, setIsLoading] = useState(false);
 
     // should I use useEffect here
     const fetchLinkPreviews = async (links, existingPreviews = {}) => {
@@ -22,7 +23,6 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
                     // review error 
                     previews[link] = { error: true };
                 }
-    
                 await delay(1000); 
             }
         }
@@ -31,6 +31,8 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
 
     const saveCollection = async (e) => {
         e.preventDefault();
+
+        setIsLoading(true)
 
         // Use existing previews if editing an existing collection
         const existingPreviews = activeCollection ? activeCollection.previews : {};
@@ -50,9 +52,12 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
             setCollections(prevCollections => [...prevCollections, newCollection]);
             setActiveCollection(newCollection);
         }
-        setIsFormOpen(false)
+
+        setIsLoading(false)
+        setIsFormOpen(false);
         setName('');
         setLinks(['']);
+
     };
 
     const deleteCollection = () => {
@@ -85,7 +90,8 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
     }
 
     return (
-        <>
+        // is there a better place to handle isLoading conditional?
+        <>  {!isLoading ? (
             <form onSubmit={saveCollection} className="collection-form">
                 <input 
                     type="text" 
@@ -93,22 +99,24 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-            {links.map((link, index) => (
-                <input 
-                    key={index}
-                    type="text"
-                    placeholder="Item"
-                    value={link}
-                    onChange={(e) => linkChange(index, e.target.value)}
-                />
-            ))}
-            <button type="button" onClick={addLink}>Add item</button>
-            <div className="save-delete-buttons">
-                 <button type="submit">Save</button>
-                 <button onClick={deleteCollection}>Delete</button>
-            </div>
-    </form>
-
+                {links.map((link, index) => (
+                    <input 
+                        key={index}
+                        type="text"
+                        placeholder="Item"
+                        value={link}
+                        onChange={(e) => linkChange(index, e.target.value)}
+                    />
+                ))}
+                <button type="button" onClick={addLink}>Add item</button>
+                <div className="save-delete-buttons">
+                    <button type="submit">Save</button>
+                    <button onClick={deleteCollection}>Delete</button>
+                </div>
+            </form>
+        ) : (
+            <p className="notification">Loading...</p>
+        )}
         </>
     )
 }
