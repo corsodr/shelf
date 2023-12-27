@@ -1,39 +1,24 @@
-Deadline
-Deploy by Thursday.
+Steady progress.
 
-Today 
--adjust default height 
--chrome history design
-
-Wednesday 
--shouldn't fetch again when re-saving if links exist 
-    -check how many times I'm fetching 
--define MVP, set hard deadline, priortize tasks, execute
+Now 
 -throttle API requests 
-    -confirm I need to - check docs + google
-    -confirm how
-    -is it possible to load one at a time
-    -handle loading 
-    -should only throttle when needed
-    -minimize throttle
--code review 
--data flow 
--modulraize CollectionForm
--test things out 
--delete link
--layout
-    -overall
-    -form
-    -buttons 
+    -try loading one at a time
+    -add loading
+
+Queue 
+-refactor CollectionView
+-refactor CollectionForm 
+-review code + data flow 
+-implement delete link
+-change link order?
+-review layout 
 -saving empty collections
 -title + link validation / requirement
 -invalid urls 
 -long url line break
 -long titles
 -image wdith shrinking
--change link order
-
-Thursday 
+-UI state styling? 
 -mobile design 
 -implement mobile 
 -review ccs units
@@ -41,13 +26,15 @@ Thursday
 -review strict mode 
 -turn off TS linter
 -hide API key 
--deploy 
+-improve throttling 
+-ask GPT for code feedback 
+-ask people for code feedback 
+-use it myself 
+-get user feedback 
 
 Future 
--code feedback 
--user feedback 
--UI state 
--add collection to sidebar on create click 
+-deploy 
+-add collection to sidebar on create click
 -combine collection edit and read
 -implement my own link preview
 -customization (eg how display an item)

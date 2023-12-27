@@ -6,35 +6,36 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
     const [name, setName] = useState(activeCollection ? activeCollection.name : '');
     const [links, setLinks] = useState(activeCollection ? activeCollection.links : ['']);
 
-    // should I use useEffect here? 
-    const fetchLinkPreviews = async (links) => {
-        const previews = {};
-        // review this and compare to how I'd use setTimeout
+    // should I use useEffect here
+    const fetchLinkPreviews = async (links, existingPreviews = {}) => {
+        const previews = { ...existingPreviews };
         const delay = ms => new Promise(res => setTimeout(res, ms));
-
+    
         for (const link of links) {
-            try {
-                const response = await fetch(`https://api.linkpreview.net/?key=[407b1bbc6ac4f9a2ecdd9a2aaad59bf5]&q=${link}`);
-                const data = await response.json();
-                previews[link] = data;
-            } catch (error) {
-                console.error("Error fetching link preview:", error);
-                // review error
-                previews[link] = { error: true };
+            if (!previews[link]) {
+                try {
+                    const response = await fetch(`https://api.linkpreview.net/?key=[407b1bbc6ac4f9a2ecdd9a2aaad59bf5]&q=${link}`);
+                    const data = await response.json();
+                    previews[link] = data;
+                } catch (error) {
+                    console.error("Error fetching link preview:", error);
+                    // review error 
+                    previews[link] = { error: true };
+                }
+    
+                await delay(1000); 
             }
-
-            await delay(1000); 
         }
         return previews;
-    }
-
-
-       
+    };
 
     const saveCollection = async (e) => {
         e.preventDefault();
 
-        const previews = await fetchLinkPreviews(links);
+        // Use existing previews if editing an existing collection
+        const existingPreviews = activeCollection ? activeCollection.previews : {};
+
+        const previews = await fetchLinkPreviews(links, existingPreviews);
 
         if (activeCollection) {
             // Update existing collection
