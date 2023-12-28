@@ -1,18 +1,16 @@
 Steady progress.
 
 Queue 
--refactor CollectionView
--refactor CollectionForm 
--review code + data flow 
+-master code + date flow + add comments
 -add delete link 
 -change link order?
--review layout 
 -saving empty collections
--title + link validation / requirement
+-review layout 
+-title + link validation 
 -invalid urls 
--long url line break
 -long titles
--image wdith shrinking
+-long url line break
+-image sizing + positioning 
 -UI state styling? 
 -mobile design 
 -implement mobile 
@@ -30,6 +28,7 @@ Queue
 
 Future 
 -deploy 
+-modularize CollectionForm 
 -add collection to sidebar on create click
 -combine collection edit and read
 -implement my own link preview

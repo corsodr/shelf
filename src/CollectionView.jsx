@@ -1,32 +1,40 @@
-const CollectionView = ({activeCollection, setCollections, setIsFormOpen, setActiveCollection}) => {
- 
+const CollectionView = ({ activeCollection, setIsFormOpen, setActiveCollection }) => {
+
   const handleEdit = () => {
     setIsFormOpen(true);
     setActiveCollection(activeCollection);
   };
 
-  return (
-      <div className="collection-view">
-      <h1>{activeCollection.name}</h1>
+  const renderLinkItem = (link, index) => {
+    const preview = activeCollection.previews[link];
+    const hasPreview = preview?.image && preview?.title;
 
-      {activeCollection.links.map((link, index) => (
-        // review rendering logic + simplify if possible
+    if (hasPreview) {
+      return (
         <a key={index} className="item" href={link}>
-          {activeCollection.previews[link]?.image && activeCollection.previews[link]?.title ? (
-            <>
-              <img src={activeCollection.previews[link].image} alt={activeCollection.previews[link].title} />
-              <div>
-                <p className="link-title">{activeCollection.previews[link].title}</p>
-                <p className="link-source">{new URL(link).hostname}</p>
-              </div>
-            </>
-          ) : (
-            <p className="link-url">{link}</p>
-          )}
+          <img src={preview.image} alt={preview.title} />
+          <div>
+            <p className="link-title">{preview.title}</p>
+            <p className="link-source">{new URL(link).hostname}</p>
+          </div>
         </a>
-      ))}
+      );
+    }
+
+    return (
+      <a key={index} className="item" href={link}>
+        <p className="link-url">{link}</p>
+      </a>
+    );
+  };
+
+  return (
+    <div className="collection-view">
+      <h1>{activeCollection.name}</h1>
+      {activeCollection.links.map((link, index) => renderLinkItem(link, index))}
       <button onClick={handleEdit}>Edit</button>
     </div>
   );
-}
+};
+
 export default CollectionView;
