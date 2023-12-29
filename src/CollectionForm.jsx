@@ -78,6 +78,11 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
         setLinks(newLinks)
     }
 
+    const deleteItem = (index) => {
+        const newLinks = links.filter((_, idx) => idx !== index);
+        setLinks(newLinks);
+    }
+
     return (
         <>  
             {!isLoading ? (
@@ -87,15 +92,20 @@ const CollectionForm = ({setIsFormOpen, collections, setCollections, activeColle
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
                     {links.map((link, index) => (
-                        <input 
-                            key={index}
-                            type="text"
-                            placeholder="Item"
-                            value={link}
-                            onChange={(e) => linkChange(index, e.target.value)}
-                        />
+                        <div className="item-input-container" key={index}>
+                            <input 
+                                className="item-input"
+                                type="url"
+                                placeholder="Item"
+                                value={link}
+                                onChange={(e) => linkChange(index, e.target.value)}
+                                required
+                            />
+                            <button type="button" onClick={() => deleteItem(index)}>X</button>
+                        </div>
                     ))}
                     <button type="button" onClick={addLink}>Add item</button>
                     <div className="save-delete-buttons">

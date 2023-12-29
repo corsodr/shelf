@@ -14,8 +14,8 @@ const CollectionView = ({ activeCollection, setIsFormOpen, setActiveCollection }
         <a key={index} className="item" href={link}>
           <img src={preview.image} alt={preview.title} />
           <div>
-            <p className="link-title">{preview.title}</p>
-            <p className="link-source">{new URL(link).hostname}</p>
+            <p className="item-title">{preview.title}</p>
+            <p className="item-source">{new URL(link).hostname}</p>
           </div>
         </a>
       );
@@ -23,7 +23,7 @@ const CollectionView = ({ activeCollection, setIsFormOpen, setActiveCollection }
 
     return (
       <a key={index} className="item" href={link}>
-        <p className="link-url">{link}</p>
+        <p className="item-url">{link}</p>
       </a>
     );
   };

@@ -25,7 +25,6 @@ body {
     gap: 20px;
 }
 
-
 .sidebar {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
@@ -33,7 +32,6 @@ body {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    /* check this: */
     padding-bottom: 20px;
 }
 
@@ -70,8 +68,7 @@ body {
 .collection-form {
     display: flex; 
     flex-direction: column; 
-    max-width: 500px; 
-    padding: 20px;
+    margin: 24px;
   }
   
 .collection-form input,
@@ -81,6 +78,18 @@ body {
   border: 1px solid #E5E5E5; 
   border-radius: 5px;
   font-size: 1rem; 
+}
+
+.item-input-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.item-input {
+    flex-grow: 1;
+    margin-right: 10px; 
 }
 
 .collection-form button {
@@ -94,8 +103,6 @@ body {
 .save-delete-buttons button {
     width: 50%;
 }
-
-/* review names:  */
 
 .collection-view {
     margin: 24px;
@@ -123,23 +130,18 @@ body {
     margin: 16px;
   }
 
-  .link-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .link-title {
+  .item-title {
     font-weight: bold;
     font-size: 18px;
     margin: 0;
   }
   
-  .link-source {
+  .item-source {
     font-size: 0.9rem;
     margin: 4px 0;
   }
 
-  .link-url {
+  .item-url {
     font-weight: bold;
     font-size: 18px;
     margin: 24px 16px;
@@ -148,7 +150,7 @@ body {
 .collection-view button {
     background-color: #E5E5E5;
     padding: 10px 20px;
-    width: 40%;
+    width: 50%;
     font-size: 1rem; 
     border: 1px solid #E5E5E5;
     border-radius: 4px;
