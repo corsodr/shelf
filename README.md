@@ -1,20 +1,17 @@
 Steady progress.  
 
+Now 
+
 Queue  
--images (use Amazon - compare to iMessage + Notion + Google)
-
--diagram data flow + component structure
--review code + add comments 
-
--link / item naming 
--css selector consistentcy
-
 -mobile design 
 -implement mobile 
+-diagram data flow + component structure
+-review code + add comments 
 
 -review strict mode 
 -turn off TS linter
 -hide API key 
+-deploy 
 
 -use it myself 
 -ask GPT for code feedback 
@@ -22,15 +19,18 @@ Queue
 -get user feedback 
 
 Roadmap (think this through)
--deploy 
 -what are my goals 
 -when to work on it 
 -work with someone
 -UI state styling 
 -change link order
+-link vs item naming in code 
 -combine collection edit and read
+-review link preview docs 
 -implement my own link preview
--customization (eg how to display an item)
+-preprocess images to standardize aspect ratios
+-redesign items
+-customization (eg item upload + display) 
 -accounts 
 -BE
 -timeline 

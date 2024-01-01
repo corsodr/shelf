@@ -31,9 +31,8 @@ const App = () => {
                             />
                         ) : activeCollection ? (
                             <CollectionView 
-                                activeCollection={activeCollection} 
-                                setCollections={setCollections}
                                 setIsFormOpen={setIsFormOpen}
+                                activeCollection={activeCollection} 
                                 setActiveCollection={setActiveCollection}
                             />
                         ) : (

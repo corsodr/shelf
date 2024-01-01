@@ -65,6 +65,10 @@ body {
     margin-top: 30px;
 }
 
+/********************/
+/* Collection Form: */
+/********************/
+
 .collection-form {
     display: flex; 
     flex-direction: column; 
@@ -104,6 +108,10 @@ body {
     width: 50%;
 }
 
+/********************/
+/* Collection View: */
+/********************/
+
 .collection-view {
     margin: 24px;
 }
@@ -122,13 +130,12 @@ body {
     margin-top: 8px;
 }
 
-  .collection-view .item img {
-    width: 180px;
+.item-image {
+    width: 160px;
     height: 100px; 
-    object-fit: cover;
-    border-radius: 5px;
     margin: 16px;
-  }
+    border-radius: 5px;
+}
 
   .item-title {
     font-weight: bold;

@@ -1,10 +1,11 @@
-const CollectionView = ({ activeCollection, setIsFormOpen, setActiveCollection }) => {
+const CollectionView = ({ setIsFormOpen, activeCollection, setActiveCollection }) => {
 
   const handleEdit = () => {
     setIsFormOpen(true);
     setActiveCollection(activeCollection);
   };
 
+  // is this a good way to deal with rendering? 
   const renderLinkItem = (link, index) => {
     const preview = activeCollection.previews[link];
     const hasPreview = preview?.image && preview?.title;
@@ -12,7 +13,10 @@ const CollectionView = ({ activeCollection, setIsFormOpen, setActiveCollection }
     if (hasPreview) {
       return (
         <a key={index} className="item" href={link}>
-          <img src={preview.image} alt={preview.title} />
+          {/* why does this div make image widths the same */}
+          <div>
+            <img className="item-image" src={preview.image} alt={preview.title} />
+          </div>
           <div>
             <p className="item-title">{preview.title}</p>
             <p className="item-source">{new URL(link).hostname}</p>

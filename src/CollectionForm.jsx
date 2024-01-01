@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-const CollectionForm = ({setIsFormOpen, collections, setCollections, activeCollection, setActiveCollection}) => {
+const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeCollection, setActiveCollection }) => {
+    // review activeCollection data flow 
     const [name, setName] = useState(activeCollection ? activeCollection.name : '');
     const [links, setLinks] = useState(activeCollection ? activeCollection.links : ['']);
     const [isLoading, setIsLoading] = useState(false);
