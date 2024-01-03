@@ -13,7 +13,9 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
         for (const link of links) {
             if (!previews[link]) {
                 try {
-                    const response = await fetch(`https://api.linkpreview.net/?key=[407b1bbc6ac4f9a2ecdd9a2aaad59bf5]&q=${link}`);
+                    const apiKey = import.meta.env.VITE_LINK_PREVIEW_API_KEY;
+                    console.log(apiKey)
+                    const response = await fetch(`https://api.linkpreview.net/?key=${apiKey}&q=${link}`);
                     const data = await response.json();
                     previews[link] = data;
                 } catch (error) {

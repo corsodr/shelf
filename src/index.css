@@ -3,6 +3,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+/* review what this does */
 .wrapper {
     max-width: 1000px;
     margin: auto;
@@ -65,9 +66,8 @@ body {
     margin-top: 30px;
 }
 
-/********************/
-/* Collection Form: */
-/********************/
+/* Collection Form */
+
 
 .collection-form {
     display: flex; 
@@ -108,9 +108,7 @@ body {
     width: 50%;
 }
 
-/********************/
-/* Collection View: */
-/********************/
+/* Collection View */
 
 .collection-view {
     margin: 24px;
@@ -157,10 +155,26 @@ body {
 .collection-view button {
     background-color: #E5E5E5;
     padding: 10px 20px;
-    width: 50%;
+    width: 100%;
     font-size: 1rem; 
     border: 1px solid #E5E5E5;
     border-radius: 4px;
     cursor: pointer; 
     margin-top: 16px;
 }
+
+/* Media Queries */
+
+/* @media only screen and (max-width: 768px)  {
+    do I need this: 
+    .wrapper {
+        max-width: none;
+        padding: 10px;
+    }
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .side-bar {
+        height:fit-content;
+    }
+} */
