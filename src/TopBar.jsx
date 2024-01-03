@@ -1,10 +1,11 @@
 const TopBar = () => {
     return (
         <header className="topbar">
-            <img src="src/assets/logo.svg" alt="" />
-            <img src="src/assets/avatar.svg" alt="" />
+            <img src="/logo.svg" alt="" />
+            <img src="/avatar.svg" alt="" />
         </header>
     )
 }
 
 export default TopBar
+
