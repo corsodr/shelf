@@ -1,4 +1,4 @@
-const SideBar = ({collections, setActiveCollection, setIsFormOpen}) => {
+const SideBar = ({ setIsFormOpen, collections, setActiveCollection }) => {
     
     return (
         <div className="sidebar">

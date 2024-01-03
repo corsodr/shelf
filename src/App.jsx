@@ -16,23 +16,27 @@ const App = () => {
                 <TopBar /> 
                 <main className="main-container">
                     <SideBar 
-                        isFormOpen={isFormOpen} 
+                        setIsFormOpen={setIsFormOpen}
                         collections={collections} 
                         setActiveCollection={setActiveCollection}
-                        setIsFormOpen={setIsFormOpen}
                     />
-                    {/* review this: */}
                     <MainContent >
                         {isFormOpen ? (
                             <CollectionForm 
-                                setCollections={setCollections}
-                                setActiveCollection={setActiveCollection}
                                 setIsFormOpen={setIsFormOpen}
+                                collections={collections}
+                                setCollections={setCollections}
+                                activeCollection={activeCollection}
+                                setActiveCollection={setActiveCollection}
                             />
                         ) : activeCollection ? (
-                            <CollectionView collection={activeCollection} />
+                            <CollectionView 
+                                setIsFormOpen={setIsFormOpen}
+                                activeCollection={activeCollection} 
+                                setActiveCollection={setActiveCollection}
+                            />
                         ) : (
-                            <p className="main-empty">No collections</p>
+                            <p className="notification">No collections</p>
                         )}
                     </MainContent>
                 </main>

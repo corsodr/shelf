@@ -3,6 +3,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+/* review what this does */
 .wrapper {
     max-width: 1000px;
     margin: auto;
@@ -25,14 +26,14 @@ body {
     gap: 20px;
 }
 
-
 .sidebar {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 140px);
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
 }
 
 .sidebar button {
@@ -56,20 +57,22 @@ body {
 .main-content {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 140px);
     margin-bottom: 20px;
 }
 
-.main-empty {
+.notification {
     text-align: center;
     margin-top: 30px;
 }
 
+/* Collection Form */
+
+
 .collection-form {
     display: flex; 
     flex-direction: column; 
-    max-width: 500px; 
-    padding: 20px;
+    margin: 24px;
   }
   
 .collection-form input,
@@ -79,6 +82,18 @@ body {
   border: 1px solid #E5E5E5; 
   border-radius: 5px;
   font-size: 1rem; 
+}
+
+.item-input-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.item-input {
+    flex-grow: 1;
+    margin-right: 10px; 
 }
 
 .collection-form button {
@@ -93,6 +108,8 @@ body {
     width: 50%;
 }
 
+/* Collection View */
+
 .collection-view {
     margin: 24px;
 }
@@ -101,7 +118,63 @@ body {
     margin: 0;
 }
 
-/* why did I have to do this: */
-.collection-view-link {
-    margin: 16px 0px;
+.item { 
+    display: flex;
+    align-items: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    margin-top: 8px;
 }
+
+.item-image {
+    width: 160px;
+    height: 100px; 
+    margin: 16px;
+    border-radius: 5px;
+}
+
+  .item-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .item-source {
+    font-size: 0.9rem;
+    margin: 4px 0;
+  }
+
+  .item-url {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 24px 16px;
+  }
+
+.collection-view button {
+    background-color: #E5E5E5;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 1rem; 
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 16px;
+}
+
+/* Media Queries */
+
+/* @media only screen and (max-width: 768px)  {
+    do I need this: 
+    .wrapper {
+        max-width: none;
+        padding: 10px;
+    }
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+    .side-bar {
+        height:fit-content;
+    }
+} */
