@@ -3,7 +3,6 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-/* review what this does */
 .wrapper {
     max-width: 1000px;
     margin: auto;
@@ -84,14 +83,14 @@ body {
   font-size: 1rem; 
 }
 
-.item-input-container {
+.link-input-container {
     display: flex;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-.item-input {
+.link-input {
     flex-grow: 1;
     margin-right: 10px; 
 }
@@ -118,7 +117,7 @@ body {
     margin: 0;
 }
 
-.item { 
+.link-container { 
     display: flex;
     align-items: center;
     border: 1px solid #E5E5E5;
@@ -128,25 +127,25 @@ body {
     margin-top: 8px;
 }
 
-.item-image {
+.link-image {
     width: 160px;
     height: 100px; 
     margin: 16px;
     border-radius: 5px;
 }
 
-  .item-title {
+  .link-title {
     font-weight: bold;
     font-size: 18px;
     margin: 0;
   }
   
-  .item-source {
+  .link-source {
     font-size: 0.9rem;
     margin: 4px 0;
   }
 
-  .item-url {
+  .link-url {
     font-weight: bold;
     font-size: 18px;
     margin: 24px 16px;
@@ -165,8 +164,7 @@ body {
 
 /* Media Queries */
 
-/* @media only screen and (max-width: 768px)  {
-    do I need this: 
+@media only screen and (max-width: 768px)  {
     .wrapper {
         max-width: none;
         padding: 10px;
@@ -177,4 +175,4 @@ body {
     .side-bar {
         height:fit-content;
     }
-} */
+}
