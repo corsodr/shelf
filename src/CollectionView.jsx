@@ -6,28 +6,28 @@ const CollectionView = ({ setIsFormOpen, activeCollection, setActiveCollection }
   };
 
   // is this a good way to deal with rendering? 
-  const renderLinkItem = (link, index) => {
+  const renderLinkPreview = (link, index) => {
     const preview = activeCollection.previews[link];
     const hasPreview = preview?.image && preview?.title;
 
     if (hasPreview) {
       return (
-        <a key={index} className="item" href={link}>
+        <a key={index} className="link-container" href={link}>
           {/* why does this div make image widths the same */}
           <div>
-            <img className="item-image" src={preview.image} alt={preview.title} />
+            <img className="link-image" src={preview.image} alt={preview.title} />
           </div>
           <div>
-            <p className="item-title">{preview.title}</p>
-            <p className="item-source">{new URL(link).hostname}</p>
+            <p className="link-title">{preview.title}</p>
+            <p className="link-source">{new URL(link).hostname}</p>
           </div>
         </a>
       );
     }
 
     return (
-      <a key={index} className="item" href={link}>
-        <p className="item-url">{link}</p>
+      <a key={index} className="link-container" href={link}>
+        <p className="link-url">{link}</p>
       </a>
     );
   };
@@ -35,7 +35,7 @@ const CollectionView = ({ setIsFormOpen, activeCollection, setActiveCollection }
   return (
     <div className="collection-view">
       <h1>{activeCollection.name}</h1>
-      {activeCollection.links.map((link, index) => renderLinkItem(link, index))}
+      {activeCollection.links.map((link, index) => renderLinkPreview(link, index))}
       <button onClick={handleEdit}>Edit</button>
     </div>
   );
