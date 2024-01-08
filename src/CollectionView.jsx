@@ -1,13 +1,9 @@
-const CollectionView = ({ setIsFormOpen, activeCollection, setActiveCollection }) => {
+const CollectionView = ({ setIsFormOpen, activeCollection }) => {
 
-  const handleEdit = () => {
-    setIsFormOpen(true);
-    setActiveCollection(activeCollection);
-  };
-
-  // is this a good way to deal with rendering? 
   const renderLinkPreview = (link, index) => {
     const preview = activeCollection.previews[link];
+    console.log('activeCollection: ', activeCollection)
+    console.log('preview:', preview)
     const hasPreview = preview?.image && preview?.title;
 
     if (hasPreview) {
@@ -36,7 +32,7 @@ const CollectionView = ({ setIsFormOpen, activeCollection, setActiveCollection }
     <div className="collection-view">
       <h1>{activeCollection.name}</h1>
       {activeCollection.links.map((link, index) => renderLinkPreview(link, index))}
-      <button onClick={handleEdit}>Edit</button>
+      <button onClick={() => setIsFormOpen(true)}>Edit</button>
     </div>
   );
 };

@@ -14,6 +14,7 @@ const SideBar = ({ setIsFormOpen, collections, setActiveCollection }) => {
                 <div 
                     key={index} 
                     className="collection-card"
+                    // review how activeCollection is set to collection 
                     onClick={() => {
                         setActiveCollection(collection);
                         setIsFormOpen(false);

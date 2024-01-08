@@ -33,7 +33,6 @@ const App = () => {
                             <CollectionView 
                                 setIsFormOpen={setIsFormOpen}
                                 activeCollection={activeCollection} 
-                                setActiveCollection={setActiveCollection}
                             />
                         ) : (
                             <p className="notification">No collections</p>

@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeCollection, setActiveCollection }) => {
-    // review activeCollection data flow 
     const [name, setName] = useState(activeCollection ? activeCollection.name : '');
     const [links, setLinks] = useState(activeCollection ? activeCollection.links : ['']);
     const [isLoading, setIsLoading] = useState(false);
@@ -58,6 +57,7 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
         const newCollections = collections.filter(collection => collection !== activeCollection);
         setCollections(newCollections);
 
+        // review this 
         if (newCollections.length > 0) {
             if (index > 0) {
                 setActiveCollection(newCollections[index - 1]);
