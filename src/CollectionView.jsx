@@ -2,8 +2,6 @@ const CollectionView = ({ setIsFormOpen, activeCollection }) => {
 
   const renderLinkPreview = (link, index) => {
     const preview = activeCollection.previews[link];
-    console.log('activeCollection: ', activeCollection)
-    console.log('preview:', preview)
     const hasPreview = preview?.image && preview?.title;
 
     if (hasPreview) {
