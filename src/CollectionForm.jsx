@@ -11,10 +11,10 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
         const delay = ms => new Promise(res => setTimeout(res, ms));
     
         for (const link of links) {
+            // shorten URLs or use an ID for key in previews?
             if (!previews[link]) {
                 try {
                     const apiKey = import.meta.env.VITE_LINK_PREVIEW_API_KEY;
-                    console.log(apiKey)
                     const response = await fetch(`https://api.linkpreview.net/?key=${apiKey}&q=${link}`);
                     const data = await response.json();
                     previews[link] = data;
@@ -34,6 +34,7 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
 
         const existingPreviews = activeCollection ? activeCollection.previews : {};
         const previews = await fetchLinkPreviews(links, existingPreviews);
+        console.log('previews: ', previews)
 
         if (activeCollection) {
             const updatedCollections = collections.map(collection => 
@@ -45,6 +46,8 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
             const newCollection = { name, links, previews };
             setCollections(prevCollections => [...prevCollections, newCollection]);
             setActiveCollection(newCollection);
+            console.log('collection:', newCollection)
+
         }
 
         setIsLoading(false)
@@ -123,4 +126,4 @@ const CollectionForm = ({ setIsFormOpen, collections, setCollections, activeColl
     )
 }
 
-export default CollectionForm
+export default CollectionForm;

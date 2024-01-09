@@ -14,8 +14,8 @@ body {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     padding: 8px 32px; 
 } 
 
@@ -26,8 +26,8 @@ body {
 }
 
 .sidebar {
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     min-height: calc(100vh - 140px);
     margin-bottom: 20px;
     display: flex;
@@ -36,26 +36,26 @@ body {
 }
 
 .sidebar button {
-    background-color: #E5E5E5;
-    padding: 10px 20px;
+    background-color: #d3d3d3;
+    padding: 16px 20px;
     font-size: 1rem; 
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     cursor: pointer; 
     margin: 20px 16px 14px 16px;
 }
 
 .collection-card {
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     padding: 20px;
     margin: 6px 16px;
     cursor: pointer;
 }
 
 .main-content {
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     min-height: calc(100vh - 140px);
     margin-bottom: 20px;
 }
@@ -74,14 +74,22 @@ body {
     margin: 24px;
   }
   
-.collection-form input,
-.collection-form button {
-  padding: 10px 20px; 
+.collection-form input {
+  padding: 16px 20px; 
   margin-bottom: 10px; 
-  border: 1px solid #E5E5E5; 
-  border-radius: 5px;
+  border: 2px solid #d3d3d3; 
+  border-radius: 8px;
   font-size: 1rem; 
 }
+
+.collection-form button {
+    background-color: #d3d3d3;
+    padding: 16px 20px; 
+    margin-bottom: 10px; 
+    border: 2px solid #d3d3d3; 
+    border-radius: 8px;
+    font-size: 1rem; 
+  }
 
 .link-input-container {
     display: flex;
@@ -120,8 +128,8 @@ body {
 .link-container { 
     display: flex;
     align-items: center;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
     text-decoration: none;
     color: black;
     margin-top: 8px;
@@ -131,7 +139,7 @@ body {
     width: 160px;
     height: 100px; 
     margin: 16px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
   .link-title {
@@ -152,12 +160,12 @@ body {
   }
 
 .collection-view button {
-    background-color: #E5E5E5;
-    padding: 10px 20px;
+    background-color: #d3d3d3;
+    padding: 16px 20px;
     width: 100%;
     font-size: 1rem; 
-    border: 1px solid #E5E5E5;
-    border-radius: 4px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
     cursor: pointer; 
     margin-top: 16px;
 }
